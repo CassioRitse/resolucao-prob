@@ -117,17 +117,15 @@ export default function Home() {
         </button>
       </div>
 
-      <div
-        className="grid gap-2 w-full"
-        style={{
-          gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-        }}
-      >
+      <div className="grid gap-2 w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {palette.map((color, index) => (
-          <div key={index} className="relative h-[250px] rounded shadow-md">
+          <div
+            key={index}
+            className="relative h-[300px] rounded shadow-md transform transition-all hover:scale-110"
+          >
             <div
               style={{ backgroundColor: color }}
-              className={`h-full flex items-center justify-center rounded border-2 border-[${color}]`}
+              className={`h-full flex items-center justify-center rounded`}
             >
               <p className="text-center text-white font-bold">{color}</p>
             </div>
@@ -167,7 +165,7 @@ export default function Home() {
       <h1 className="text-2xl mt-8 font-bold mb-4">
         Demonstração de Componentes
       </h1>
-      <div className="mt-8 flex flex-wrap gap-2">
+      <div className="mt-8 flex flex-wrap justify-around gap-2">
         {palette.map((color, index) => (
           <div
             key={index}
